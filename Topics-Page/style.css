@@ -1,0 +1,334 @@
+body {
+      background-color: #fef9e7;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .squiggle {
+      color: green;
+    }
+    main {
+      padding: 50px 20px;
+    }
+    h1, h2 {
+      color: #4e2a1e;
+      margin-top: 140px;
+    }
+
+
+
+/* body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #fcf9ee; 
+    color: #333;
+    overflow-x: hidden; 
+} */
+
+/* .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+} */
+
+/* .logo {
+    display: flex;
+    align-items: center;
+} */
+
+/* .logo h1 {
+    font-family: 'Fredoka One', cursive;
+    color: #4CAF50; /
+    font-size: 2.5em;
+    margin-right: 10px;
+} */
+
+/* .squiggle {
+    height: 20px; 
+    vertical-align: middle;
+} */
+
+/* .navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 30px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: #888;
+} */
+
+.content {
+    display: flex;
+    padding: 200px;
+    align-items: flex-start;
+}
+
+.question-section {
+    /* position: relative; */
+    margin-right: 100px;
+    margin-top: 100px;
+    width: 180px; /* Adjust to align with the cards */
+}
+
+.question-section p {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5em;
+    color: #333;
+    max-width: 150px;
+    /* line-height: 0.2; */
+}
+
+.blue-character {
+    /* position: absolute; */
+    bottom: -100px; /* Adjust position */
+    left: 0;
+    width: 150px; /* Adjust size */
+}
+
+/* .arrow {
+    position: absolute;
+    top: 50px; 
+    left: 180px; 
+    width: 80px; 
+    transform: rotate(-80deg); 
+} */
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 90px; /* Space between cards */
+    flex-grow: 1;
+}
+
+.topic-card {
+    background-color: #ffb6c1; /* Pink background */
+    border-radius: 30px; /* More rounded corners */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* transform: rotate(-20deg); */
+    min-height: 80px; /* Ensure a consistent height */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.topic-card span {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5em;
+    color: #000000;
+    z-index: 1; /* Ensure text is above the character */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-left: 120px; /* Adjust based on character position */
+}
+
+.character-img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; /* Adjust character size */
+    left: -50px; /* Adjust to make it pop out */
+    z-index: 2; /* Bring character to front */
+}
+
+/* Specific adjustments for each character position */
+.addition .character-img {
+    top: -20px; /* Adjust as needed */
+    left: -30px;
+    width: 80px;
+}
+
+.subtraction .character-img {
+    top: -10px;
+    left: -40px;
+    width: 120px;
+}
+
+.multiplication .character-img {
+    top: -20px; /* Adjust to align with the star's top */
+    left: -30px;
+    width: 100px;
+}
+
+.division .character-img {
+    top: -20px;
+    left: -30px;
+    width: 80px;
+}
+
+/* Adjust span position for each card based on character */
+.addition span {
+    margin-left: 100px;
+}
+
+.subtraction span {
+    margin-left: 100px;
+}
+
+.multiplication span {
+    margin-left: 100px;
+}
+
+.division span {
+    margin-left: 100px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+    }
+
+    .question-section {
+        margin-right: 0;
+        margin-bottom: 80px;
+        text-align: center;
+    }
+
+    .blue-character {
+        bottom: -80px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .arrow {
+        top: auto;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%) rotate(90deg);
+    }
+
+    .topics-grid {
+        grid-template-columns: 1fr;
+        width: 80%;
+    }
+
+    .topic-card span {
+        margin-left: 150px; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .navbar nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar nav ul li {
+        margin: 5px 10px;
+    }
+
+    .logo h1 {
+        font-size: 2em;
+    }
+
+    .question-section p {
+        font-size: 1.8em;
+    }
+
+    .blue-character {
+        width: 100px;
+        bottom: -60px;
+    }
+
+    .arrow {
+        width: 60px;
+        bottom: 0;
+    }
+
+    .topics-grid {
+        width: 95%;
+    }
+
+    .topic-card {
+        padding: 20px 30px;
+    }
+
+    .topic-card span {
+        font-size: 2em;
+        margin-left: 100px;
+    }
+
+    .character-img {
+        width: 120px;
+        left: -40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .logo h1 {
+        font-size: 1.8em;
+    }
+
+    .navbar nav ul li {
+        margin: 3px 5px;
+    }
+
+    .question-section p {
+        font-size: 1.5em;
+    }
+
+    .blue-character {
+        width: 80px;
+        bottom: -50px;
+    }
+
+    .arrow {
+        width: 50px;
+        bottom: 5px;
+    }
+
+    .topic-card span {
+        font-size: 1.8em;
+        margin-left: 80px;
+    }
+
+    .character-img {
+        width: 100px;
+        left: -30px;
+    }
+}
