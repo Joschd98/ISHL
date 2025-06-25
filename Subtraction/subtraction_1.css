@@ -1,0 +1,258 @@
+body {
+    background-color: #fef9e7; /* Light cream background */
+    font-family: 'Fredoka One', cursive; /* Use Fredoka One for headings/main text */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    font-family: 'Open Sans', sans-serif; /* Open Sans for header navigation */
+}
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.squiggle {
+    color: #6edb50; /* Green color for the squiggle */
+    font-size: 1.2em;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Reintroduced padding-left to push the main content area right */
+    padding: 20px 20px 20px 350px; /* Top, Right, Bottom, Left padding */
+    position: relative; /* For absolute positioning of elements */
+}
+h1 {
+    color: #4e2a1e;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.problem-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to the left within this section */
+    width: 80%;
+    max-width: 900px;
+    margin-top: 30px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    /* Added some padding to problem section to prevent car emojis from going off screen */
+    padding-right: 20px;
+}
+.statement {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px; /* Space between statements */
+    font-size: 1.6em; /* Adjusted font size for better fit */
+    color: #333;
+    line-height: 1.2;
+    justify-content: flex-start;
+    width: 100%; /* Ensure statement takes full width of its parent */
+}
+.statement strong {
+    color: #ff6f00; /* Orange color for numbers */
+    font-size: 1.1em; /* Slightly larger for numbers */
+    margin: 0 8px;
+}
+.cars { /* New class for cars emoji */
+    display: flex;
+    margin-left: 5px; /* Small margin to separate from text */
+    font-size: 40px; /* Size for car emojis */
+    line-height: 1; /* Adjust line height for emojis */
+    white-space: nowrap; /* Prevent cars from wrapping */
+    color: #6edb50; /* Green color for cars, matching the image */
+}
+
+.question-bubble {
+    position: absolute; /* Kept absolute for independent positioning */
+    top: 150px; /* Adjusted top position to be higher */
+    left: 50px; /* Moved back to 'left' side */
+    width: 250px;
+    height: 180px;
+    background-color: transparent;
+    border: 3px solid black;
+    border-radius: 50%; /* Makes it a circle/oval */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 1.3; /* Adjusted line height for better text fit */
+    z-index: 1; /* Ensure it's above other content */
+}
+.question-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -20px; /* Position the tail below */
+    left: 50%; /* Moved back to 'left' side to match bubble position */
+    transform: translateX(-50%) rotate(45deg); /* Adjusted transform to point right from left bubble */
+    width: 30px;
+    height: 30px;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black; /* Moved back to 'right' for tail direction */
+    background-color: transparent;
+    z-index: -1;
+}
+
+.blue-character {
+    position: absolute;
+    bottom: -150px; /* Adjusted to be below the bubble */
+    left: 100px; /* Moved back to 'left' side */
+    width: 150px; /* Size of the blue character */
+    z-index: 0;
+}
+
+.equation-section {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 2.8em; /* Large font for equation */
+    color: #333;
+}
+.equation-section .number-input {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fce4ec; /* Light pink background */
+    border: 2px solid #f8bbd0; /* Slightly darker pink border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.equation-section .number-input:hover {
+    background-color: #f8bbd0; /* Darker pink on hover */
+    transform: scale(1.05);
+}
+.equation-section .number-input:active {
+    transform: scale(0.98);
+}
+.equation-section .correct {
+    background-color: #dcedc8; /* Light green for correct */
+    border-color: #aed581;
+}
+.equation-section .wrong {
+    background-color: #ffcdd2; /* Light red for wrong */
+    border-color: #ef9a9a;
+}
+
+.arrow-right {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 100px; /* Size of the arrow */
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    main {
+        padding: 20px 20px 20px 280px; /* Adjusted padding for smaller screens */
+    }
+    .question-bubble {
+        top: 100px; /* Adjusted for smaller screens to match new high position */
+        left: 20px; /* Moved back to 'left' */
+        width: 200px;
+        height: 150px;
+        font-size: 1.1em;
+        line-height: 1.2; /* Adjusted line height for better text fit */
+    }
+    .blue-character {
+        bottom: -100px; /* Adjusted for smaller screen sizes to be below bubble */
+        left: 50px; /* Moved back to 'left' */
+        width: 120px;
+    }
+    .statement {
+        font-size: 1.4em; /* Further adjustment for smaller screens */
+    }
+    .cars {
+        font-size: 30px; /* Smaller emoji cars on smaller screens */
+    }
+    .equation-section {
+        font-size: 2em;
+    }
+    .equation-section .number-input {
+        width: 60px;
+        height: 60px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+    nav a {
+        margin: 0 8px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    main {
+        padding: 20px; /* Reset padding for very small screens to avoid excessive empty space */
+        align-items: center; /* Re-center items if no left padding */
+    }
+    .problem-section {
+        width: 95%;
+        align-items: flex-start; /* Keep text aligned left */
+    }
+    .question-bubble {
+        position: static; /* Make it flow with content on smaller screens */
+        width: 80%;
+        height: auto;
+        border-radius: 15px; /* Make it more rectangular */
+        margin: 20px auto;
+        padding: 15px;
+        /* When static, left/right/top/bottom don't apply */
+    }
+    .question-bubble::before {
+        display: none; /* Hide the tail */
+    }
+    .blue-character {
+        position: static;
+        margin: 10px auto;
+    }
+    .statement {
+        flex-direction: column; /* Stack cars below text */
+        align-items: flex-start;
+        font-size: 1.2em;
+    }
+    .cars {
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 25px;
+    }
+    .equation-section {
+        flex-wrap: wrap; /* Allow numbers to wrap */
+        justify-content: center;
+        font-size: 1.8em;
+    }
+    .equation-section .number-input {
+        width: 50px;
+        height: 50px;
+        font-size: 0.7em;
+        margin: 5px;
+    }
+    .arrow-right {
+        bottom: 10px;
+        right: 10px;
+        width: 70px;
+    }
+}

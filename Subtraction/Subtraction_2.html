@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benny the Bunny's Carrots - Arithmakids</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="substraction_2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        /* Add styles for the try again message */
+        .try-again-message {
+            background-color: #ffcdd2; /* Light red */
+            color: #b71c1c; /* Dark red text */
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            max-width: 350px;
+            width: 90%;
+            position: relative; /* Ensure it stays in the flow but can be animated */
+            z-index: 10; /* Bring to front */
+        }
+
+        .try-again-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive adjustments for the message */
+        @media (max-width: 768px) {
+            .try-again-message {
+                font-size: 1.2em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Arithmakids <span class="squiggle">~</span></div>
+        <nav>
+            <a href="/Home-Page/arithmakids_home.html">Home</a>
+            <a href="/Topics-Page/index.html">Topics</a>
+            <a href="#">For Parents</a>
+            <a href="#">Trouble navigating?</a>
+            <a href="/About-Page/about_us.html">About Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Benny the Bunny's Carrots</h1>
+
+        <div class="problem-section">
+            <div class="statement">
+                Benny had <strong>7 carrots</strong> in his basket
+                <div class="carrots">🥕🥕🥕🥕🥕🥕🥕</div>
+            </div>
+            <div class="statement">
+                He ate <strong>2 carrots</strong>
+                <div class="carrots">🥕🥕</div>
+            </div>
+            <div class="statement">
+                He gave <strong>3 carrots</strong> to his friend
+                <div class="carrots">🥕🥕🥕</div>
+            </div>
+            <div class="statement">
+                Now, how many carrots does Benny have left?
+            </div>
+        </div>
+
+        <div class="question-bubble">
+            <span id="bubble-content">How many <strong>carrots</strong> does Benny have now?</span>
+        </div>
+        <img src="/Topics-Page/blue-charac.png" alt="Blue character" class="blue-character">
+
+        <div class="equation-section">
+            7 - 2 - 3 =
+            <div class="number-input" onclick="checkAnswer(2)">2</div>
+            <div class="number-input" onclick="checkAnswer(4)">4</div>
+            <div class="number-input" onclick="checkAnswer(5)">5</div>
+            <div class="number-input" onclick="checkAnswer(3)">3</div>
+        </div>
+
+        <!-- New element for the "Try again" message -->
+        <div id="tryAgainMessage" class="try-again-message">
+            Try again, you got this!
+        </div>
+
+        <img src="/Home-Page/arrow.png" alt="Right arrow" class="arrow-right" onclick="goToNextPage()">
+    </main>
+
+    <script>
+        function checkAnswer(selectedNumber) {
+            const correctAnswer = 2; // 7 - 2 - 3 = 2
+            const numberInputs = document.querySelectorAll('.number-input');
+            const tryAgainMessage = document.getElementById('tryAgainMessage');
+
+            // Reset classes on all number inputs
+            numberInputs.forEach(input => {
+                input.classList.remove('correct', 'wrong');
+            });
+
+            // Hide the message immediately
+            tryAgainMessage.classList.remove('show');
+
+            const clickedInput = Array.from(numberInputs).find(input => parseInt(input.textContent) === selectedNumber);
+
+            if (selectedNumber === correctAnswer) {
+                clickedInput.classList.add('correct');
+                // Redirect to a "well done" page after a short delay for visual feedback
+                setTimeout(() => {
+                    window.location.href = 'well_done.html'; // Path to your well done page
+                }, 500); // 500ms delay
+            } else {
+                clickedInput.classList.add('wrong');
+                // Show the "Try again" message
+                tryAgainMessage.classList.add('show');
+                // Hide the message after 3 seconds
+                setTimeout(() => {
+                    tryAgainMessage.classList.remove('show');
+                }, 3000); // 3 seconds
+            }
+        }
+
+        function goToNextPage() {
+            // Replace 'next_challenge.html' with the actual path to your next page
+            window.location.href = 'next_challenge.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const bubbleContentElement = document.getElementById('bubble-content');
+            const messages = [
+                'How many <strong>carrots</strong> does Benny have now?',
+                'Can you find the correct answer below?',
+                'Think carefully before you choose!'
+            ];
+            let messageIndex = 0;
+            let cycleCount = 0;
+            const maxChanges = 3; 
+            let intervalId; 
+
+            function updateBubbleContent() {
+                if (cycleCount < maxChanges) {
+                    bubbleContentElement.innerHTML = messages[messageIndex];
+                    messageIndex = (messageIndex + 1) % messages.length;
+                    cycleCount++;
+                } else {
+                    clearInterval(intervalId);
+                }
+            }
+
+            updateBubbleContent();
+            intervalId = setInterval(updateBubbleContent, 3000); 
+        });
+    </script>
+</body>
+</html>
