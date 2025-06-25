@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmakids - Success!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+    body {
+      background-color: #fef9e7;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .squiggle {
+        padding-bottom: 5px;
+      color: green;
+    }
+    </style>
+    
+</head>
+<body>
+
+    <header>
+    <div class="logo">Arithmakids <span class="squiggle">~</span></div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Topics</a>
+      <a href="#">For Parents</a>
+      <a href="#">Trouble navigating?</a>
+      <a href="#">About Us</a>
+    </nav>
+  </header>
+    <!-- <header class="navbar">
+        <div class="logo">
+            <h1>Arithmakids</h1>
+            <img src="path/to/your/squiggle.png" alt="squiggle" class="squiggle"> </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Topics</a></li>
+                <li><a href="#">For Parents</a></li>
+                <li><a href="#">Trouble navigating?</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+    </header> -->
+
+    <main class="content-success">
+        <div class="animation-section">
+            <img src="star-other.png" alt="Star" class="star star-top-left">
+            <img src="star-other.png" alt="Star" class="star star-top-center">
+            <img src="star-other.png" alt="Star" class="star star-top-right">
+            <img src="box-charac.png" alt="Blue Cube Character" class="blue-cube-character">
+        </div>
+
+        <div class="message-section">
+            <p class="hooray-message">Hooray! You did it!</p>
+            <p class="smarter-message">Every step you take makes you smarter!</p>
+        </div>
+
+        <div class="score-section">
+            <div class="score-card points-card">
+                <span class="score-number">10</span>
+                <img src="coin.png" alt="Coin" class="score-icon"> </div>
+            <div class="score-card flames-card">
+                <span class="score-number">1</span>
+                <img src="fire.png" alt="Flame" class="score-icon"> </div>
+        </div>
+
+        <div class="continue-section">
+            <span class="continue-text">Continue</span>
+            <img src="arrow-other.png" alt="Right Arrow" class="continue-arrow"> </div>
+    </main>
+</body>
+</html>
+<script>
+  window.onload = () => {
+    confetti({
+      particleCount: 150,
+      spread: 70,
+      origin: { y: 0.6 },
+    });
+  };
+</script>
