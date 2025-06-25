@@ -1,0 +1,330 @@
+body {
+      background-color: #fef9e7;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .squiggle {
+      color: green;
+    }
+    main {
+      padding: 50px 20px;
+    }
+    h1, h2 {
+      color: #4e2a1e;
+      margin-top: 140px;
+    }
+
+/* Subtraction page specific styles */
+.title {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+  gap: 20px;
+  justify-content: center;
+  max-width: 800px;
+}
+
+.character {
+  width: 80px;
+}
+
+.example {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.tomatoes {
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.tomato {
+  font-size: 32px;
+}
+
+.equation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.face {
+  width: 50px;
+}
+
+.practice {
+  text-align: right;
+  margin-top: 30px;
+  padding-right: 40px;
+}
+
+.practice-link {
+  font-size: 18px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  border: 2px solid #000;
+  padding: 10px 20px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.practice-link:hover {
+  background-color: #f0e68c;
+}
+
+/* existing content continues below */
+
+.content {
+    display: flex;
+    padding: 200px;
+    align-items: flex-start;
+}
+
+.question-section {
+    margin-right: 100px;
+    margin-top: 100px;
+    width: 180px;
+}
+
+.question-section p {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5em;
+    color: #333;
+    max-width: 150px;
+}
+
+.blue-character {
+    bottom: -100px;
+    left: 0;
+    width: 150px;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 90px;
+    flex-grow: 1;
+}
+
+.topic-card {
+    background-color: #ffb6c1;
+    border-radius: 30px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 80px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.topic-card span {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5em;
+    color: #000000;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-left: 120px;
+}
+
+.character-img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    left: -50px;
+    z-index: 2;
+}
+
+.addition .character-img {
+    top: -20px;
+    left: -30px;
+    width: 80px;
+}
+
+.subtraction .character-img {
+    top: -10px;
+    left: -40px;
+    width: 120px;
+}
+
+.multiplication .character-img {
+    top: -20px;
+    left: -30px;
+    width: 100px;
+}
+
+.division .character-img {
+    top: -20px;
+    left: -30px;
+    width: 80px;
+}
+
+.addition span,
+.subtraction span,
+.multiplication span,
+.division span {
+    margin-left: 100px;
+}
+
+/* Responsive styles below */
+@media (max-width: 1200px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+    }
+
+    .question-section {
+        margin-right: 0;
+        margin-bottom: 80px;
+        text-align: center;
+    }
+
+    .blue-character {
+        bottom: -80px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .arrow {
+        top: auto;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%) rotate(90deg);
+    }
+
+    .topics-grid {
+        grid-template-columns: 1fr;
+        width: 80%;
+    }
+
+    .topic-card span {
+        margin-left: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .navbar nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar nav ul li {
+        margin: 5px 10px;
+    }
+
+    .logo h1 {
+        font-size: 2em;
+    }
+
+    .question-section p {
+        font-size: 1.8em;
+    }
+
+    .blue-character {
+        width: 100px;
+        bottom: -60px;
+    }
+
+    .arrow {
+        width: 60px;
+        bottom: 0;
+    }
+
+    .topics-grid {
+        width: 95%;
+    }
+
+    .topic-card {
+        padding: 20px 30px;
+    }
+
+    .topic-card span {
+        font-size: 2em;
+        margin-left: 100px;
+    }
+
+    .character-img {
+        width: 120px;
+        left: -40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .logo h1 {
+        font-size: 1.8em;
+    }
+
+    .navbar nav ul li {
+        margin: 3px 5px;
+    }
+
+    .question-section p {
+        font-size: 1.5em;
+    }
+
+    .blue-character {
+        width: 80px;
+        bottom: -50px;
+    }
+
+    .arrow {
+        width: 50px;
+        bottom: 5px;
+    }
+
+    .topic-card span {
+        font-size: 1.8em;
+        margin-left: 80px;
+    }
+
+    .character-img {
+        width: 100px;
+        left: -30px;
+    }
+}
