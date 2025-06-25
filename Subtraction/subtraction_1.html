@@ -46,7 +46,7 @@
     <header>
         <div class="logo">Arithmakids <span class="squiggle">~</span></div>
         <nav>
-            <a href="/Home-Page/arithmakids_home.html">Home</a>
+            <a href="../Home-Page/arithmakids_home.html">Home</a>
             <a href="/Topics-Page/index.html">Topics</a>
             <a href="#">For Parents</a>
             <a href="#">Trouble navigating?</a>
@@ -90,7 +90,7 @@
             Try again, you got this!
         </div>
 
-        <img src="../Images/arrow.png" alt="Right arrow" class="arrow-right" onclick="goToNextPage()">
+
     </main>
 
     <script>
@@ -113,7 +113,7 @@
                 clickedInput.classList.add('correct');
                 // Redirect to a "well done" page after a short delay for visual feedback
                 setTimeout(() => {
-                    window.location.href = 'well_done.html'; // Path to your well done page
+                    window.location.href = '../Level-1/success.html'; // Path to your well done page
                 }, 500); // 500ms delay
             } else {
                 if (clickedInput) { // Ensure clickedInput is not null before adding class

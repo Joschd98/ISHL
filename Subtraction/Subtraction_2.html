@@ -93,7 +93,7 @@
             Try again, you got this!
         </div>
 
-        <img src="../Images/arrow.png" alt="Right arrow" class="arrow-right" onclick="goToNextPage()">
+
     </main>
 
     <script>
@@ -116,7 +116,7 @@
                 clickedInput.classList.add('correct');
                 // Redirect to a "well done" page after a short delay for visual feedback
                 setTimeout(() => {
-                    window.location.href = 'well_done.html'; // Path to your well done page
+                    window.location.href = '../Level-2/success.html'; // Path to your well done page
                 }, 500); // 500ms delay
             } else {
                 clickedInput.classList.add('wrong');
