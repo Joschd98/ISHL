@@ -1,0 +1,70 @@
+    body {
+      background-color: #fef9e7;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .squiggle {
+      color: green;
+    }
+    main {
+      padding: 50px 20px;
+    }
+    h1, h2 {
+      color: #4e2a1e;
+      margin-top: 140px;
+    }
+    .start-btn {
+      margin-top: 80px;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #3477f2;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      /* transform: scale(1.05); */
+    }
+    .character, .rainbow {
+      position: absolute;
+    }
+    .character.bunny {
+      bottom: 90px;
+      left: 180px;
+      width: 230px;
+    }
+    .character.block {
+      top: 300px;
+      right: 300px;
+      width: 180px;
+    }
+    .character.arrow {
+      bottom: 150px;
+      left: 420px;
+      width: 300px;
+    }
+    .rainbow {
+      top: 100px;
+      left: 350px;
+      width: 250px;
+    }
