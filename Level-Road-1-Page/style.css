@@ -53,6 +53,19 @@ nav a {
   align-items: center;
 }
 
+.level-box-down {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 180px;
+}
+
+.level-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .level-number {
   width: 60px;
   height: 60px;
@@ -80,10 +93,16 @@ nav a {
   height: auto;
 }
 
-.arrow {
+.arrowup {
   width: 40px;
   height: auto;
-  transform: rotate(20deg);
+  transform: rotate(270deg);
+}
+
+.arrowdown {
+  width: 40px;
+  height: auto;
+  transform: rotate(0deg);
 }
 
 @media (max-width: 768px) {
