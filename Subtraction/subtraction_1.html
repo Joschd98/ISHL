@@ -40,6 +40,15 @@
                 padding: 10px 20px;
             }
         }
+        .audio-icon {
+    position: absolute;
+    left: 240px; /* adjust position as needed */
+    bottom: -100px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 2;
+}
     </style>
 </head>
 <body>
@@ -76,7 +85,9 @@
             <span id="bubble-content">How many <strong>cars</strong> does Tom have left?</span>
         </div>
         <img src="../Images/blue-charac.png" alt="Blue character" class="blue-character">
+        <img src="../Images/audio.png" alt="Audio" class="audio-icon" onclick="playAudio()">
 
+        <audio id="voiceClip" src="..\Audio\Subtraction\Test.mp3".mp3"></audio>
         <div class="equation-section">
             6 - 1 =
             <div class="number-input" onclick="checkAnswer(5)">5</div>
@@ -94,6 +105,10 @@
     </main>
 
     <script>
+        function playAudio() {
+    const audio = document.getElementById('voiceClip');
+    audio.play();
+}
         function checkAnswer(selectedNumber) {
             const correctAnswer = 5; // 6 - 1 = 5
             const numberInputs = document.querySelectorAll('.number-input');
