@@ -46,11 +46,11 @@
     <header>
         <div class="logo">Arithmakids <span class="squiggle">~</span></div>
         <nav>
-            <a href="/Home-Page/arithmakids_home.html">Home</a>
-            <a href="/Topics-Page/index.html">Topics</a>
-            <a href="#">For Parents</a>
-            <a href="#">Trouble navigating?</a>
-            <a href="/About-Page/about_us.html">About Us</a>
+            <a href="../Home-Page/arithmakids_home.html">Home</a>
+                <a href="../Topics-Page/index.html">Topics</a>
+                <a href="../navBar/for-parents/for-parents.html">For Parents</a>
+                <a href="../navBar/how-to-navigate/how-to-navigate.html">Trouble navigating?</a>
+                <a href="../navBar/aboutus/aboutus.html">About Us</a>
         </nav>
     </header>
 
@@ -94,7 +94,7 @@
 
         <!-- Element for the "Try again" message -->
         <div id="tryAgainMessage" class="try-again-message">
-            Try again, you got this!
+            Not quite, but you're close! 🐰💛, Check the little hints on the left it might spark an idea!💡
         </div>
 
 
@@ -143,9 +143,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             const bubbleContentElement = document.getElementById('bubble-content');
             const messages = [
-                'How many <strong>balloons</strong> does Tom have now?',
-                'Can you find the correct answer below?',
-                'Don\'t give up, you\'re close!'
+                'Start Simple, Tom had 12 balloons. First, 5 flew away. What is 12 minus 5?',
+                'One Step at a Time, After losing 5, Tom had 7 left. Then 1 balloon popped. How many remain after that?',
+                'Now Tom has 6 balloons. He gave 2 to his friends. What’s 6 minus 2?'
             ];
             let messageIndex = 0;
             let cycleCount = 0;

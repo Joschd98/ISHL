@@ -1,0 +1,173 @@
+/* body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #fcf8ee; 
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; 
+    max-width: 1200px;
+    padding: 20px 0;
+}
+
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1em;
+} */
+
+h1, h2 {
+    font-family: 'Fredoka One', cursive;
+    color: #4CAF50; /* Green for headings */
+}
+
+.why-arithmakids {
+    text-align: center;
+    padding: 50px 20px;
+    width: 100%;
+}
+
+.why-arithmakids h1 {
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+
+.why-points {
+    position: relative;
+    width: 600px; /* Adjust based on your desired layout */
+    height: 400px; /* Adjust based on your desired layout */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tomato-illustration {
+    position: absolute;
+    width: 150px; /* Adjust size of the tomato */
+    height: 150px;
+    /* z-index: 1; */
+    /* border-radius: 50%; If your tomato is a circle placeholder */
+}
+
+.point-item {
+    position: absolute;
+    width: 150px; /* Adjust box size */
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.1em;
+    z-index: 2;
+}
+
+/* Positioning for each point around the tomato */
+.made-with-heart {
+    top: 50px;
+    left: 0;
+}
+
+.backed-by-research {
+    bottom: 50px;
+    left: 0;
+}
+
+.fun-focused {
+    top: 50px;
+    right: 0;
+}
+
+.built-with-experts {
+    bottom: 50px;
+    right: 0;
+}
+
+/* Lines connecting points to the tomato (using pseudo-elements for simplicity) */
+.point-item::before {
+    content: '';
+    position: absolute;
+    background-color: #333;
+    width: 2px;
+    height: 0; /* Will be set individually */
+    z-index: -1;
+}
+
+.made-with-heart::before {
+    transform-origin: right center;
+    transform: rotate(-45deg);
+    right: -10px;
+    width: 60px; /* Length of the line */
+    top: 50%;
+    height: 2px;
+}
+
+.backed-by-research::before {
+    transform-origin: right center;
+    transform: rotate(45deg);
+    right: -10px;
+    padding-right: 5%;
+    width: 60px;
+    top: 50%;
+    height: 2px;
+}
+
+.fun-focused::before {
+    transform-origin: left center;
+    transform: rotate(45deg);
+    left: -10px;
+    width: 60px;
+    top: 50%;
+    height: 2px;
+}
+
+.built-with-experts::before {
+    transform-origin: left center;
+    transform: rotate(-45deg);
+    left: -10px;
+    width: 60px;
+    top: 50%;
+    height: 2px;
+}
+
+
+.about-us-section {
+    background-color: #e6ffe6; /* Light green background for the box */
+    border: 2px solid #cfd1c5; /* Green border */
+    border-radius: 15px;
+    padding: 30px 40px;
+    margin: 50px auto;
+    width: 70%;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-content h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #4CAF50; /* Green for heading */
+}
+
+.about-us-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
