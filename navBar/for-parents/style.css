@@ -1,0 +1,175 @@
+body {
+    font-family: 'Fredoka', sans-serif;
+    margin: 0;
+    background-color: #F8ECC2; /* Light cream background */
+    color: #333;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #F8ECC2; /* Same as body for seamless look */
+    border-bottom: 1px solid #ddd; /* A subtle separator */
+}
+
+.logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+.squiggle {
+      color: green;
+    }
+
+.logo img {
+    height: 50px; /* Adjust as needed for your logo */
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Custom wave effect for the logo text - a basic representation */
+.logo-wave {
+    width: 120px; /* Adjust width to fit "Arithmakids" */
+    height: 15px; /* Adjust height for the wave effect */
+    background: linear-gradient(to right, #6EE7B7, #34D399, #059669); /* Greenish wave colors */
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0; /* Creates a wave shape */
+    transform: translateY(-5px); /* Lift it slightly to suggest a wave under text */
+    position: absolute;
+    margin-left: 5px; /* Adjust to align with the text if logo is text-based */
+    z-index: -1; /* Place behind text if text is overlayed */
+}
+
+
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #007bff; /* Example hover color */
+}
+
+.content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.intro-section h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.intro-section p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+.features-section {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    margin-bottom: 60px;
+    text-align: left; /* Align text within feature blocks */
+}
+
+.feature-block {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff; /* White background for blocks */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-block h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.feature-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-block li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px; /* Space for custom bullet */
+}
+
+.feature-block li::before {
+    content: '•'; /* Custom bullet point */
+    color: #6EE7B7; /* Greenish color for bullets */
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.footer-cta {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tomato-image img {
+    width: 100px; /* Size of the tomato icon */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.footer-cta p {
+    font-size: 1.3em;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .features-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature-block {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
