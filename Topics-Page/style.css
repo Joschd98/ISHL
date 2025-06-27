@@ -153,6 +153,14 @@ body {
     margin-left: 120px; /* Adjust based on character position */
 }
 
+a.topic-card {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+
+
 .character-img {
     position: absolute;
     top: 50%;
