@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arithmakids</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Define a simple bounce animation for the character */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Apply the animation to loop infinitely */
+        .character.block { /* Removed .interactive class for continuous animation */
+            animation: bounce 0.6s ease-in-out infinite; /* Added infinite iteration */
+        }
+    </style>
 </head>
 <body>
   <header>
@@ -24,7 +40,7 @@
       We are excited to see you !!
     </h1>
     <!-- <h1>We are excited to see you</h1> -->
-    <img src="../Images/block-character.png" alt="Block Character" class="character block" />
+    <img src="../Images/block-character.png" alt="Block Character" class="character block" id="blockCharacter" />
     <img src="../Images/bunny-character.png" alt="Bunny Character" class="character bunny" />
     <img src="../Images/arrow_green.png" alt="Arrow" class="character arrow"/>  
     <button class="start-btn">Start here</button>
@@ -33,6 +49,10 @@
   document.querySelector('.start-btn').addEventListener('click', () => {
     window.location.href = "../Topics-Page/index.html";
   });
+
+  // Removed the DOMContentLoaded listener and click event for continuous animation
+  // The animation is now controlled purely by CSS
 </script>
 </body>
 </html>
+
