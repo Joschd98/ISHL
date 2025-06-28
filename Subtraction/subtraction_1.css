@@ -23,7 +23,7 @@ nav a {
     font-weight: bold;
 }
 .squiggle {
-    color: #6edb50; /* Green color for the squiggle */
+    color: green; /* Green color for the squiggle */
     font-size: 1.2em;
 }
 main {
@@ -64,7 +64,7 @@ h1 {
     width: 100%; /* Ensure statement takes full width of its parent */
 }
 .statement strong {
-    color: #ff6f00; /* Orange color for numbers */
+    color: red; /* Orange color for numbers */
     font-size: 1.1em; /* Slightly larger for numbers */
     margin: 0 8px;
 }
