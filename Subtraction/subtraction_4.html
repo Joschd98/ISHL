@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Problem - Arithmakids</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="subtraction_4.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        /* Add styles for the try again message, consistent with previous pages */
+        .try-again-message {
+            background-color: #ffcdd2; /* Light red */
+            color: #b71c1c; /* Dark red text */
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            max-width: 350px;
+            width: 90%;
+            position: relative; /* Ensure it stays in the flow but can be animated */
+            z-index: 10; /* Bring to front */
+        }
+
+        .try-again-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive adjustments for the message */
+        @media (max-width: 768px) {
+            .try-again-message {
+                font-size: 1.2em;
+                padding: 10px 20px;
+            }
+        }
+
+        /* Dance animation for the blue character */
+        @keyframes characterDance {
+            0% { transform: rotate(0deg) translateY(0px); }
+            25% { transform: rotate(5deg) translateY(-5px); }
+            50% { transform: rotate(0deg) translateY(0px); }
+            75% { transform: rotate(-5deg) translateY(-5px); }
+            100% { transform: rotate(0deg) translateY(0px); }
+        }
+
+        .blue-character.dance {
+            animation: characterDance 0.8s ease-in-out; /* Apply dance animation */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Arithmakids <span class="squiggle">~</span></div>
+        <nav>
+            <a href="../Home-Page/arithmakids_home.html">Home</a>
+            <a href="/Topics-Page/index.html">Topics</a>
+            <a href="#">For Parents</a>
+            <a href="#">Trouble navigating?</a>
+            <a href="/About-Page/about_us.html">About Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Bus Problem</h1>
+
+        <div class="problem-section">
+            <div class="statement">
+                A bus had <strong>20 passengers.</strong>
+            </div>
+            <div class="statement">
+                <strong>11</strong> got off from the bus.
+            </div>
+            <div class="bus-emoji">🚌</div>
+            <div class="statement">
+                How many are still on the bus?
+            </div>
+        </div>
+
+        <div class="question-bubble">
+            <span id="bubble-content">You got this!</span>
+        </div>
+        <img src="../Images/blue-charac.png" alt="Blue character" class="blue-character" id="blueCharacter">
+
+        <div class="equation-section">
+            20 - 11 =
+            <div class="number-input" onclick="checkAnswer(9)">9</div>
+            <div class="number-input" onclick="checkAnswer(8)">8</div>
+            <div class="number-input" onclick="checkAnswer(10)">10</div>
+            <div class="number-input" onclick="checkAnswer(7)">7</div>
+        </div>
+
+        <!-- Element for the "Try again" message -->
+        <div id="tryAgainMessage" class="try-again-message">
+            Almost there! 🚌💭, Keep trying — sometimes a little extra thought helps us reach our destination! 🛣️💡
+        </div>
+    </main>
+
+    <script>
+        function checkAnswer(selectedNumber) {
+            const correctAnswer = 9; // 20 - 11 = 9
+            const numberInputs = document.querySelectorAll('.number-input');
+            const tryAgainMessage = document.getElementById('tryAgainMessage');
+
+            // Reset classes on all number inputs
+            numberInputs.forEach(input => {
+                input.classList.remove('correct', 'wrong');
+            });
+
+            // Hide the message immediately
+            tryAgainMessage.classList.remove('show');
+
+            const clickedInput = Array.from(numberInputs).find(input => parseInt(input.textContent) === selectedNumber);
+
+            if (selectedNumber === correctAnswer) {
+                if (clickedInput) {
+                    clickedInput.classList.add('correct');
+                }
+                // Redirect to a "well done" page after a short delay for visual feedback
+                setTimeout(() => {
+                    window.location.href = '../Level-1/success.html'; // Path to your well done page
+                }, 500); // 500ms delay
+            } else {
+                if (clickedInput) {
+                    clickedInput.classList.add('wrong');
+                }
+                // Show the "Try again" message
+                tryAgainMessage.classList.add('show');
+                // Hide the message after 3 seconds
+                setTimeout(() => {
+                    tryAgainMessage.classList.remove('show');
+                }, 3000); // 3 seconds
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const bubbleContentElement = document.getElementById('bubble-content');
+            const blueCharacter = document.getElementById('blueCharacter'); // Get the blue character element
+            const messages = [
+                'There are 20 passengers. First, imagine that 10 of them get off. How many are left now?',
+                'Great! Now just 1 more passenger gets off. You already found how many were left after 10 got off — what happens if 1 more leaves?',
+                'Now you can think of it as 20 minus 11. Try counting back from 20 by 11 steps, where do you land?'
+            ];
+            let messageIndex = 0;
+            let cycleCount = 0;
+            const maxChanges = 3;
+            let intervalId; 
+
+            function updateBubbleContent() {
+                if (cycleCount < maxChanges) {
+                    bubbleContentElement.innerHTML = messages[messageIndex];
+                    messageIndex = (messageIndex + 1) % messages.length;
+                    cycleCount++;
+
+                    // Add dance animation class
+                    blueCharacter.classList.remove('dance'); // Remove in case it's still there
+                    void blueCharacter.offsetWidth; // Trigger reflow to restart animation
+                    blueCharacter.classList.add('dance');
+                } else {
+                    clearInterval(intervalId);
+                }
+            }
+
+            // Initial call and then set interval
+            updateBubbleContent();
+            intervalId = setInterval(updateBubbleContent, 20000);
+        });
+    </script>
+</body>
+</html>
