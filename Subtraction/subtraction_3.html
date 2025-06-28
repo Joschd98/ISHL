@@ -27,7 +27,14 @@
             position: relative; /* Ensure it stays in the flow but can be animated */
             z-index: 10; /* Bring to front */
         }
-
+        .audio-icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin-left: 12px;
+        vertical-align: middle;
+        cursor: pointer;
+    }
         .try-again-message.show {
             opacity: 1;
             transform: translateY(0);
@@ -68,7 +75,10 @@
     </header>
 
     <main>
-        <h1>Tom's Birthday Balloons</h1>
+        <h1>Tom's Birthday Balloons
+            <img src="../Images/audio.svg" alt="Audio" class="audio-icon" onclick="playAudio()">
+            <audio id="voiceClip" src="..\Audio\Subtraction\subtraction_3.mp3"></audio>
+        </h1>
 
         <div class="problem-section">
             <div class="statement">
@@ -114,6 +124,10 @@
     </main>
 
     <script>
+        function playAudio() {
+            const audio = document.getElementById('voiceClip');
+            audio.play();
+        }
         function checkAnswer(selectedNumber) {
             const correctAnswer = 4; // 12 - 5 - 1 - 2 = 4
             const numberInputs = document.querySelectorAll('.number-input');

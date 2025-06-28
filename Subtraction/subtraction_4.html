@@ -32,6 +32,14 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .audio-icon {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin-left: 12px;
+        vertical-align: middle;
+        cursor: pointer;
+    }
 
         /* Responsive adjustments for the message */
         @media (max-width: 768px) {
@@ -68,7 +76,10 @@
     </header>
 
     <main>
-        <h1>Bus Problem</h1>
+        <h1>Bus Problem
+            <img src="../Images/audio.svg" alt="Audio" class="audio-icon" onclick="playAudio()">
+        <audio id="voiceClip" src="..\Audio\Subtraction\subtraction_4.mp3"></audio>
+        </h1>
 
         <div class="problem-section">
             <div class="statement">
@@ -103,6 +114,10 @@
     </main>
 
     <script>
+        function playAudio() {
+            const audio = document.getElementById('voiceClip');
+            audio.play();
+        }
         function checkAnswer(selectedNumber) {
             const correctAnswer = 9; // 20 - 11 = 9
             const numberInputs = document.querySelectorAll('.number-input');

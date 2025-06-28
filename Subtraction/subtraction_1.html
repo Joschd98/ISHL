@@ -41,14 +41,14 @@
             }
         }
         .audio-icon {
-            position: absolute;
-            left: 240px; /* adjust position as needed */
-            bottom: -100px;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            z-index: 2;
-        }
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin-left: 12px;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
 
         /* Dance animation for the blue character */
         @keyframes characterDance {
@@ -77,7 +77,11 @@
     </header>
 
     <main>
-        <h1>Tom's Toy Car Problem</h1>
+        <h1>
+         Tom's Toy Car Problem
+        <img src="../Images/audio.svg" alt="Audio" class="audio-icon" onclick="playAudio()">
+        <audio id="voiceClip" src="..\Audio\Subtraction\subtraction_1.mp3"></audio>
+        </h1>
 
         <div class="problem-section">
             <div class="statement">
@@ -98,9 +102,9 @@
             <span id="bubble-content">How many <strong>cars</strong> does Tom have left?</span>
         </div>
         <img src="../Images/blue-charac.png" alt="Blue character" class="blue-character" id="blueCharacter">
-        <img src="../Images/audio.png" alt="Audio" class="audio-icon" onclick="playAudio()">
 
-        <audio id="voiceClip" src="..\Audio\Subtraction\subtraction_1_1.mp3"></audio>
+
+
         <div class="equation-section">
             6 - 1 =
             <div class="number-input" onclick="checkAnswer(5)">5</div>
