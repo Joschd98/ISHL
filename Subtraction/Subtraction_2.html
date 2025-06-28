@@ -40,6 +40,19 @@
                 padding: 10px 20px;
             }
         }
+
+        /* Dance animation for the blue character */
+        @keyframes characterDance {
+            0% { transform: rotate(0deg) translateY(0px); }
+            25% { transform: rotate(5deg) translateY(-5px); }
+            50% { transform: rotate(0deg) translateY(0px); }
+            75% { transform: rotate(-5deg) translateY(-5px); }
+            100% { transform: rotate(0deg) translateY(0px); }
+        }
+
+        .blue-character.dance {
+            animation: characterDance 0.8s ease-in-out; /* Apply dance animation */
+        }
     </style>
 </head>
 <body>
@@ -78,7 +91,7 @@
         <div class="question-bubble">
             <span id="bubble-content">How many <strong>carrots</strong> does Benny have now?</span>
         </div>
-        <img src="../Images/blue-charac.png" alt="Blue character" class="blue-character">
+        <img src="../Images/blue-charac.png" alt="Blue character" class="blue-character" id="blueCharacter">
 
         <div class="equation-section">
             7 - 2 - 3 =
@@ -136,6 +149,12 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const bubbleContentElement = document.getElementById('bubble-content');
+            const blueCharacter = document.querySelector('.blue-character'); // Get the blue character element
+            // Assign an ID to the blue character if it doesn't have one, or select it by its existing class
+            if (!blueCharacter.id) {
+                blueCharacter.id = 'blueCharacter';
+            }
+
             const messages = [
                 'Bunny had 7 yummy carrots. He ate 2 of them first and then gave 3 more to his friend. Can you figure out how many carrots are still in his basket?',
                 'Try this, Start with 7. First take away 2 (because he ate them). What’s 7 minus 2? Now take away 3 more (the ones he gave).',
@@ -151,6 +170,11 @@
                     bubbleContentElement.innerHTML = messages[messageIndex];
                     messageIndex = (messageIndex + 1) % messages.length;
                     cycleCount++;
+
+                    // Add dance animation class
+                    blueCharacter.classList.remove('dance'); // Remove in case it's still there
+                    void blueCharacter.offsetWidth; // Trigger reflow to restart animation
+                    blueCharacter.classList.add('dance');
                 } else {
                     clearInterval(intervalId);
                 }
