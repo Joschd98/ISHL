@@ -1,21 +1,23 @@
-body {
-    font-family: 'Fredoka', sans-serif;
-    margin: 0;
-    background-color: #fef9e7; /* Light cream background */
-    color: #333;
-    line-height: 1.6;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: #fef9e7; /* Same as body for seamless look */
-     /* A subtle separator */
-}
-
-.logo {
+    body {
+      background-color: #fef9e7;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+    .logo {
       font-size: 24px;
       font-weight: bold;
     }

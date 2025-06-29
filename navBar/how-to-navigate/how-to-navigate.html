@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to use - ArithmaKids</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arithmakids</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Define a simple bounce animation for the character */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Apply the animation to loop infinitely */
+        .character.block { /* Removed .interactive class for continuous animation */
+            animation: bounce 0.6s ease-in-out infinite; /* Added infinite iteration */
+        }
+    </style>
 </head>
 <body>
-    <header class="navbar">
-        <div class="logo">Arithmakids <span class="squiggle">~</span></div>
-
-            <!-- <img src="https://via.placeholder.com/150x50?text=Arithmakids+Logo" alt="ArithmaKids Logo"> </div> -->
-        <nav>
-            <ul>
-                <a href="../../Home-Page/arithmakids_home.html">Home</a>
-      <a href="../../Topics-Page/index.html">Topics</a>
-      <a href="../for-parents/for-parents.html">For Parents</a>
-      <a href="../how-to-navigate/how-to-navigate.html">Trouble navigating?</a>
-      <a href="../aboutus/aboutus.html">About Us</a>
-            </ul>
-        </nav>
-    </header>
+    <header>
+    <div class="logo">Arithmakids <span class="squiggle">~</span></div>
+    <nav>
+      <a href="../../Home-Page/arithmakids_home.html">Home</a>
+                <a href="../../Topics-Page/index.html">Topics</a>
+                <a href="../../navBar/for-parents/for-parents.html">For Parents</a>
+                <a href="../../navBar/how-to-navigate/how-to-navigate.html">Trouble navigating?</a>
+                <a href="../../navBar/aboutus/aboutus.html">About Us</a>
+    </nav>
+  </header>
 
     <main class="coming-soon-main">
         <div class="coming-soon-content">
