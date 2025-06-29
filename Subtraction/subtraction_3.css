@@ -1,12 +1,12 @@
     body {
-      background-color: #fef9e7;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #fef9e7;      
       text-align: center;
       margin: 0;
       padding: 0;
     }
     header {
       display: flex;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
@@ -26,6 +26,7 @@
     }
 main {
     display: flex;
+    font-family: 'Fredoka', sans-serif;
     flex-direction: column;
     align-items: center;
     /* Padding-left pushes content to the right, making space for absolute elements */
