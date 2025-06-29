@@ -1,31 +1,29 @@
-body {
-    background-color: #fef9e7; /* Light cream background */
-    font-family: 'Fredoka One', cursive; /* Use Fredoka One for headings/main text */
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    font-family: 'Open Sans', sans-serif; /* Open Sans for header navigation */
-}
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-}
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-.squiggle {
-    color: #6edb50; /* Green color for the squiggle */
-    font-size: 1.2em;
-}
+    body {
+      background-color: #fef9e7;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .squiggle {
+      color: green;
+    }
 main {
     display: flex;
     flex-direction: column;
