@@ -98,12 +98,13 @@ nav a {
 
 .coming-soon-content {
     display: flex;
+     font-family: 'Comic Neue', cursive;
     flex-direction: column;
     align-items: center; /* Center items within this column */
 }
 
 .coming-soon-content h1 {
-    font-family: 'Fredoka One', cursive;
+     font-family: 'Comic Neue', cursive;
     color: #333; /* Darker color for the text */
     font-size: 2.8em; /* Adjust font size as needed */
     margin-bottom: 30px;
