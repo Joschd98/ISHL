@@ -26,7 +26,7 @@ nav a {
 }
 main {
     display: flex;
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Fredoka One','Open Sans'; 
     flex-direction: column;
     align-items: center;
     /* Reintroduced padding-left to push the main content area right */

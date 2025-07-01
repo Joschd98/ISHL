@@ -27,7 +27,7 @@
     }
 main {
     display: flex;
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Fredoka One','Open Sans'; 
     flex-direction: column;
     align-items: center;
     /* Padding-left pushes content to the right, making space for absolute elements */
